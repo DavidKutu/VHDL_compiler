@@ -1,0 +1,35 @@
+entity P is(
+	A: in vector (2);
+	B: in bit;
+	C: in bit;
+	D: out vector (3);
+	E: signal vector (2);
+) end P;
+
+architecture of P is 
+begin
+	E=A|B;
+	case E is
+		when 0: 
+			if(C==0) then
+				D=000;
+			else
+				D=101;
+			end if;
+			break;
+		when 1:
+			D=A+B&C;
+			break;
+		when 2:
+			if(C==1) then
+				D=010;
+			end if;
+			break;
+		when 3:
+			D=(A-B) SHL C;
+			break;
+		when other:
+			D=111;
+			break;
+	end case;
+end P;

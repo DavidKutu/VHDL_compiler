@@ -1,0 +1,16 @@
+entity P is(
+	A: in vector (3);
+	B: in bit;
+	C: out bit;
+	D: out vector (5);
+	E: signal bit;
+) end P;
+
+architecture of P is 
+begin
+	if(A<B) then
+		D=A+B;
+	else 
+		D=A SHL B;
+	end if;
+end P;

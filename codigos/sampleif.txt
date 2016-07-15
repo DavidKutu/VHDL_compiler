@@ -1,0 +1,15 @@
+entity P is(
+	A: in vector (3);
+	B: in bit;
+	C: out bit;
+	D: out vector (5);
+	E: signal bit;
+) end P;
+
+architecture of P is 
+begin
+	if(B>A) then
+		D=100;
+		C=1;
+	end if;
+end P;

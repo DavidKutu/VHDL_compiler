@@ -1,0 +1,52 @@
+entity L is(
+	A : in  vector (8);
+    B : in  vector (8);
+    C : in  vector (3);
+    Z : out  bit;
+    O : out  bit;
+    F : out  vector (8);
+	I : signal vector (8);
+	S : signal vector (8);
+)end L;
+
+architecture of L is
+begin
+	case C is
+		when 0: 
+			I=A&B;
+			break;
+		when 1: 
+			I=A|B;
+			break;
+		when 2: 
+			I=A+B;
+			if(I>510) then
+				O=1;
+			end if;
+			break;
+		when 3: 
+			I=A;
+			break;
+		when 6: 
+			I=A-B;
+			break;
+		when 7:
+			if (A<B) then 
+				I=1;
+			else
+				I=0;
+			end if;
+			break;
+		when other:
+			I=0;
+			break;
+	end case;
+	
+	if (I==0) then
+		Z=1;
+	else
+		Z=0;
+	end if;
+
+	F=I;
+end L;

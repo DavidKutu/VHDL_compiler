@@ -1,0 +1,95 @@
+entity L is(
+	A : in  vector (4);
+	B : in  vector (4);
+	C : in  vector (4);
+	D : in  vector (2);
+	E: in  vector (3);
+    G : out  vector (4);
+	I : signal vector (8);
+)end L;
+
+architecture of L is
+begin
+	case E is
+		when 0:
+			if(D==0) then
+				G=A+B;
+			end if;
+			if (D==1) then
+				G=A+C;
+			end if;
+			if (D==2) then
+				G=B+C;
+			end if;
+		break;
+		when 1:
+			if(D==0) then
+				G=A-B;
+			end if;
+			if (D==1) then
+				G=A-C;
+			end if;
+			if (D==2) then
+				G=B-C;
+			end if;
+		break;
+		when 2:
+			if(D==0) then
+				G=A&B;
+			end if;
+			if (D==1) then
+				G=A&C;
+			end if;
+			if (D==2) then
+				G=B&C;
+			end if;
+		break;
+		when 3:
+			if(D==0) then
+				G=A|B;
+			end if;
+			if (D==1) then
+				G=A|C;
+			end if;
+			if (D==2) then
+				G=B|C;
+			end if;
+		break;
+		when 4:
+			if(D==0) then
+				G=A^B;
+			end if;
+			if (D==1) then
+				G=A^C;
+			end if;
+			if (D==2) then
+				G=B^C;
+			end if;
+		break;
+		when 5:
+			if(D==0) then
+				G=A SHL B;
+			end if;
+			if (D==1) then
+				G=A SHL C;
+			end if;
+			if (D==2) then
+				G=B SHL C;
+			end if;
+		break;
+		when 6:
+			if(D==0) then
+				G=A SHR B;
+			end if;
+			if (D==1) then
+				G=A SHR C;
+			end if;
+			if (D==2) then
+				G=B SHR C;
+			end if;
+		break;
+		when other:
+			G=0;
+		break;
+	end case;
+end L;

@@ -1,0 +1,84 @@
+entity U is(
+	I : in  vector (6);
+    D : out  bit;
+    B : out  bit;
+    J : out  bit;
+    R : out  bit;
+    M : out  bit;
+    O : out  vector (2);
+    W : out  bit;
+    S : out  bit;
+    E : out  bit;
+) end U;
+
+architecture of U is
+begin
+	case I is
+		when 0:
+			D = 1;
+			B = 0;
+			J = 0;
+			R = 0;
+			M = 0;
+			O = 2;
+			W = 0;
+			S = 0;
+			E = 1;
+			break;
+		when 35:
+			D = 0;
+			B = 0;
+			J = 0;
+			R = 1;
+			M = 1;
+			O = 0;
+			W = 0;
+			S = 1;
+			E = 1;
+			break;
+		when 43:
+			D = 0;
+			B = 0;
+			J = 0;
+			R = 0;
+			M = 0;
+			O = 0;
+			W = 1;
+			S = 1;
+			E = 0;
+			break;
+		when 4:
+			D = 0;
+			B = 1;
+			J = 0;
+			R = 0;
+			M = 0;
+			O = 1;
+			W = 0;
+			S = 0;
+			E = 0;
+			break;
+		when 2:
+			D = 0;
+			B = 0;
+			J = 1;
+			R = 0;
+			M = 0;
+			O = 00;
+			W = 0;
+			S = 0;
+			E = 0;
+			break;
+		when other:
+			D = 0;
+			B = 0;
+			J = 0;
+			R = 0;
+			M = 0;
+			O = 0;
+			W = 0;
+			S = 1;
+			E = 1;
+			break;
+	end case;
+end U;

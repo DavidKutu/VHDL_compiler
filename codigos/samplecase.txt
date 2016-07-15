@@ -1,0 +1,25 @@
+entity P is(
+	A: in bit;
+	B: in bit;
+	C: out bit;
+	D: out vector (5);
+	E: signal vector (2);
+) end P;
+
+architecture of P is 
+begin
+	case A is
+		when 0: 
+			C=A;
+			break;
+		when 1: 
+			D=B;
+			break;
+		when 2: 
+			C=B;
+			break;
+		when other: 
+			E=1;
+			break;
+	end case;
+end P;

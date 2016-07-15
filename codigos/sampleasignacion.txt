@@ -1,0 +1,15 @@
+entity P is(
+	A: in vector (3);
+	B: in bit;
+	C: out bit;
+	D: out vector (5);
+	E: signal bit;
+	F: signal vector (5);
+) end P;
+
+architecture of P is 
+begin
+	E=B;
+	F=A+B;
+	D=A|E^B&!F;
+end P;
